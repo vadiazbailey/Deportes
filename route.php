@@ -1,8 +1,9 @@
 <?php
 require_once ('controller/FacultadesController.php');
+require_once ('controller/LoginController.php');
 
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
-//define("LOGIN", BASE_URL . 'login');
+define("LOGIN", BASE_URL . 'login');
 //define("SIGNIN", BASE_URL . 'signIn');
 //define("URL_SERIE", BASE_URL . 'serie');
 
