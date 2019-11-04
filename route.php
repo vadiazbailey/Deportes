@@ -1,11 +1,11 @@
 <?php
 require_once ('controller/FacultadesController.php');
-require_once ('controller/LoginController.php');
+require_once ('controllers/LoginController.php');
 
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 define("LOGIN", BASE_URL . 'login');
 //define("SIGNIN", BASE_URL . 'signIn');
-//define("URL_SERIE", BASE_URL . 'serie');
+define("URL_OLIMPIADAS", BASE_URL . 'olimpiadas');
 
 $action = $_GET['action'];//tomo el valor del action (accion que haga el usuario)
 $genderController = new GenderController();
