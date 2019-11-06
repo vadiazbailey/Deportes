@@ -21,4 +21,8 @@ class FacultadesView{
         $this->smarty->display('../templates/verFacultades.tpl');
     }
 
+    //Mostrar una facultad
+    public function displayFacultad($facultadN){
+
+    }
 }

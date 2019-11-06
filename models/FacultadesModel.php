@@ -21,4 +21,8 @@ class FacultadesModel{
         return $facultades;
     }
     
+    //Obtener una facultad
+    public function getFacultad($facultadNombre){
+        
+    }
 }

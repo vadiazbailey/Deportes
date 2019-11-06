@@ -20,4 +20,10 @@ class FacultadesController{
     public function getFacultades(){
         $this->view->displayFacultades();
     }
+
+    //Funcion para ver una facultad
+    public function getFacultad($facultadNombre){
+        $facultad = $this->model->getFacultad($facultadNombre);
+        $this->view->displayFacultad($facultad);
+    }
 }
