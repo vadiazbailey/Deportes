@@ -1,29 +1,31 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-06 19:12:49
+/* Smarty version 3.1.33, created on 2019-11-06 19:56:20
   from 'C:\xampp\htdocs\Deportes\templates\verIndex.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dc30d219b1857_39917719',
+  'unifunc' => 'content_5dc317546258d1_40327548',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '53ed8ee2fc396093299a84bdbf934e8925c2e6da' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Deportes\\templates\\verIndex.tpl',
-      1 => 1573063945,
+      1 => 1573066571,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:facuForm.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dc30d219b1857_39917719 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dc317546258d1_40327548 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender("file:facuForm.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <section>
   <div class="leyenda">

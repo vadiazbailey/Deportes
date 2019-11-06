@@ -4,7 +4,7 @@ require_once ('./models/FacultadesModel.php');
 require_once ('./views/FacultadesView.php');
 
 class FacultadesController{
-    //variables
+    //Variables
     private $model;
     private $view;
 
@@ -16,19 +16,43 @@ class FacultadesController{
         $this->view = new FacultadesView($facultades);
     }
 
-    //Funcion para ver el Home
+    //Función que muestra el Home
     public function showIndex(){
         $this->view->displayIndex();
     }
 
-    //Funcion para ver todas las facultades
+    //Función que muestra todas las facultades
     public function getFacultades(){
         $this->view->displayFacultades();
     }
 
-    //Funcion para ver una facultad
+    //Función que muestra una facultad
     public function getFacultad($facultadNombre){
         $facultad = $this->model->getFacultad($facultadNombre);
         $this->view->displayFacultad($facultad);
+    }
+    //Función que agrega una facultad
+    public function addFacultad(){
+        if(isset($_POST['facultad'])&&($_POST['sede'])&&($_POST['historia'])){
+            $facultad=($_POST['facultad']);
+            $sede=($_POST['sede']);
+            $historia=($_POST['historia']);
+        }
+        $this->model->addFacultad($facultad,$sede,$historia);
+        header ("Location: " . URL_OLIMPIADAS);
+    }
+    //Función que edita una facultad
+    public function editFacultad(){
+        if(isset($_POST['facultad'])&&($_POST['sede'])&&($_POST['historia'])){
+            $facultad=($_POST['facultad']);
+            $sede=($_POST['sede']);
+            $historia=($_POST['historia']);
+        }
+        $this->model->editFacultad($facultad,$sede,$historia);
+        header ("Location: " . URL_OLIMPIADAS);
+    }
+    //Función que elimina una facultad
+    public function deleteFacultad(){
+        
     }
 }

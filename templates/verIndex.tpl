@@ -1,4 +1,5 @@
 {include file = "header.tpl"}
+{include file = "facuForm.tpl"}
 <section>
   <div class="leyenda">
             <article class="history">

@@ -9,7 +9,7 @@ class FacultadesModel{
         $this->db = new PDO('mysql:host=localhost;dbname=db_olimpiadas;charset=utf8','root','');
     }
 
-    //Obtener todas las facultades
+    //Obtiene todas las facultades
     public function getFacultades(){
         $query = $this->db->prepare('SELECT * FROM facultad');
         $ok= $query-> execute();
@@ -21,7 +21,7 @@ class FacultadesModel{
         return $facultades;
     }
     
-    //Obtener una facultad
+    //Obtiene una facultad
     public function getFacultad($facultadNombre){
         $query = $this->db->prepare('SELECT * FROM facultad WHERE nombre_facultad=?');
         $ok= $query-> execute(array($facultadNombre));
@@ -31,5 +31,23 @@ class FacultadesModel{
         }
         $facultad = $query->fetchAll(PDO::FETCH_OBJ);
         return $facultad;
+    }
+    //Agrega una facultad
+    public function addFacultad($facultad,$sede,$historia){
+        $query=$this->db->prepare('INSERT INTO facultad (nombre_facultad,sede,historia) VALUES (?,?,?)');
+        $query->execute(array($facultad,$sede,$historia));
+    }
+    //Edita una facultad
+    public function editFacultad($id_facultad,$facultad,$sede,$historia){
+        $query=$this->db->prepare('UPDATE facultad SET nombre_facultad=?, sede=?,historia=? WHERE id_facultad=?');
+        $ok= $query->execute(array($facultad,$sede,$historia,$id_facultad));
+        if(!$ok){
+            var_dump($query->errorInfo());
+            die();
+        }
+    }
+    //Elimina una facultad
+    public function deleteFacultad(){
+        
     }
 }
