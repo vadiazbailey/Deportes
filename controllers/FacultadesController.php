@@ -16,6 +16,11 @@ class FacultadesController{
         $this->view = new FacultadesView($facultades);
     }
 
+    //Funcion para ver el Home
+    public function showIndex(){
+        $this->view->displayIndex();
+    }
+
     //Funcion para ver todas las facultades
     public function getFacultades(){
         $this->view->displayFacultades();

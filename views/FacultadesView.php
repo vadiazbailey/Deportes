@@ -1,7 +1,7 @@
 <?php
 
 //Llama a la libreria de Smarty
-require_once ('libs/Smarty.class.php');
+require_once ('./libs/Smarty.class.php');
 
 class FacultadesView{
     //Variables
@@ -12,8 +12,14 @@ class FacultadesView{
         //Inicializa smarty
         $this->smarty = new Smarty();
         $this->smarty->assign('URL', URL_OLIMPIADAS); 
+        $this->smarty->assign('titulo', 'Home');
         //Declaro una variable con el valor de la variable pasada por parametro
-        $this->smarty->assing('facultades', $facultades);
+        $this->smarty->assign('facultades', $facultades);
+    }
+
+    //Mostrar Home
+    public function displayIndex(){
+        $this->smarty->display('../templates/verIndex.tpl');
     }
 
     //Mostrar facultades
@@ -22,7 +28,7 @@ class FacultadesView{
     }
 
     //Mostrar una facultad
-    public function displayFacultad($facultadN){
-
+    public function displayFacultad($facultadNombre){
+        $this->smarty->display('../templates/verFacultades.tpl');
     }
 }
