@@ -27,10 +27,11 @@ class FacultadesController{
     }
 
     //Función que muestra una facultad
-    public function getFacultad($facultadNombre){
-        $facultad = $this->model->getFacultad($facultadNombre);
+    public function getFacultad($id_facultad){
+        $facultad = $this->model->getFacultad($id_facultad);
         $this->view->displayFacultad($facultad);
     }
+    
     //Función que agrega una facultad
     public function addFacultad(){
         if(isset($_POST['facultad'])&&($_POST['sede'])&&($_POST['historia'])){
@@ -42,9 +43,7 @@ class FacultadesController{
         header ("Location: " . URL_OLIMPIADAS);
     }
     //Función que edita una facultad
-    public function editFacultad($id_facultad){
-        $formulario=$this->view->displayForm($id_facultad);
-
+    public function editFacultad($id_facultad,$facultad,$sede,$historia){
         if(isset($_POST['facultad'])&&($_POST['sede'])&&($_POST['historia'])){
          $facultad=($_POST['facultad']);
          $sede=($_POST['sede']);
@@ -57,10 +56,9 @@ class FacultadesController{
     
 
    //Función que muestra un formulario para editar
-    // public function displayForm($id_facultad){
-    //     $id=$this->model->displayForm($id_facultad);
-    //     $this->view->displayForm($id_facultad);
-    // }
+    public function displayForm($id_facultad){
+        $this->view->displayForm($id_facultad);
+    }
 
     //Función que elimina una facultad
     public function deleteFacultad($id_facultad){

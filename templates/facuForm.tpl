@@ -8,5 +8,5 @@
     <button type="submit" class="enviarDatos">Insertar</button>
 </form>
 {foreach from=$facultades item=facultad}
-<li>{$facultad->nombre_facultad}:{$facultad->sede}-<a href='editar/{$facultad->id_facultad}'>Editar</a> - <a href='eliminar/{$facultad->id_facultad}'>Eliminar</a></li>
+<li>{$facultad->nombre_facultad}:{$facultad->sede}-<a href='formulario/{$facultad->id_facultad}'>Editar</a> - <a href='eliminar/{$facultad->id_facultad}'>Eliminar</a></li>
 {/foreach}

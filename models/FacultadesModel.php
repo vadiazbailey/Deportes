@@ -22,16 +22,19 @@ class FacultadesModel{
     }
     
     //Obtiene una facultad
-    public function getFacultad($facultadNombre){
+    public function getFacultad($id_facultad){
         $query = $this->db->prepare('SELECT * FROM facultad WHERE nombre_facultad=?');
-        $ok= $query-> execute(array($facultadNombre));
-        if(!ok){
-            var_dump($query->$errorInfo());
-            die();
-        }
-        $facultad = $query->fetchAll(PDO::FETCH_OBJ);
-        return $facultad;
+        $query-> execute(array($id_facultad));
+        $facultad = $query->fetch(PDO::FETCH_OBJ);
     }
+    // public function getFacultad($fNombre){
+    //     $query=$this->db->prepare('SELECT * FROM facultad WHERE nombre_facultad=?');
+    //     $query->execute(array($fNombre));
+    //     return $query->fetch(PDO::FETCH_OBJ);
+    // }
+
+
+
     //Agrega una facultad
     public function addFacultad($facultad,$sede,$historia){
         $query=$this->db->prepare('INSERT INTO facultad (nombre_facultad,sede,historia) VALUES (?,?,?)');

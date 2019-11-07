@@ -12,7 +12,7 @@ class FacultadesView{
         //Inicializa smarty
         $this->smarty = new Smarty();
         $this->smarty->assign('URL', URL_OLIMPIADAS); 
-        $this->smarty->assign('titulo', 'Home');
+        $this->smarty->assign('titulo', 'Olimpiadas');
         //Declaro una variable con el valor de la variable pasada por parametro
         $this->smarty->assign('facultades', $facultades);
     }
@@ -28,7 +28,8 @@ class FacultadesView{
     }
 
     //Mostrar una facultad
-    public function displayFacultad($facultadNombre){
+    public function displayFacultad($facultad){
+        $this->smarty->assign('facultad', $facultad);
         $this->smarty->display('../templates/verFacultades.tpl');
     }
     //Muestra un formulario para editar 

@@ -6,3 +6,5 @@
     <input class="historia" name="historia" type="text" placeholder="historia"value=""/>
     <button type="submit" class="enviarDatos">Editar</button>
 </form>
+
+{include file = "footer.tpl"}

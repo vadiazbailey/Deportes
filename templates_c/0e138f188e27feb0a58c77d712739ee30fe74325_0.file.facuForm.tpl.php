@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-06 23:38:24
+/* Smarty version 3.1.33, created on 2019-11-07 02:47:44
   from 'C:\xampp\htdocs\Deportes\templates\facuForm.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dc34b605396a8_72686094',
+  'unifunc' => 'content_5dc377c05bc772_77846962',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0e138f188e27feb0a58c77d712739ee30fe74325' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Deportes\\templates\\facuForm.tpl',
-      1 => 1573079499,
+      1 => 1573091254,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dc34b605396a8_72686094 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dc377c05bc772_77846962 (Smarty_Internal_Template $_smarty_tpl) {
 ?><form class="formS" method="POST" action="insertar">
      <label>Insertar nueva facultad</label>
     <input class= "facultad" name="facultad" type="text" placeholder="facultad"value=""/>
@@ -35,7 +35,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['facultad']->value) {
 ?>
 <li><?php echo $_smarty_tpl->tpl_vars['facultad']->value->nombre_facultad;?>
 :<?php echo $_smarty_tpl->tpl_vars['facultad']->value->sede;?>
--<a href='editar/<?php echo $_smarty_tpl->tpl_vars['facultad']->value->id_facultad;?>
+-<a href='formulario/<?php echo $_smarty_tpl->tpl_vars['facultad']->value->id_facultad;?>
 '>Editar</a> - <a href='eliminar/<?php echo $_smarty_tpl->tpl_vars['facultad']->value->id_facultad;?>
 '>Eliminar</a></li>
 <?php
