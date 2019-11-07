@@ -46,7 +46,8 @@ $alumnosController=new AlumnosController();
         elseif($url[0]=="Arte"){
             $controller= getFacultad($url[1]);
         }
-        elseif($url[0]=="mostrarAlumnos"){
+        //----------------------ALUMNOS---------------------------------
+        elseif($url[0]=="alumnos"){
             $alumnosController->getAlumnos();
         }
         // elseif($url[0]=="insertarAlumnos"){

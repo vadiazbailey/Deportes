@@ -12,12 +12,21 @@ class AlumnosView{
         //Inicializa smarty
         $this->smarty = new Smarty();
         $this->smarty->assign('BASEURL', BASE_URL); 
-        $this -> smarty -> display ('templates/header.tpl');
-        $this -> smarty -> display ('templates/index.tpl');
     }
 
-    //Ver listado de Alumnos
-    public function displayAlumnos(){
-        $this->smarty->display('.');
+    //Vista de los alumnos
+    public function displayAlumnos($alumnos, $facultades){
+        $this->smarty->assign('URL', URL_OLIMPIADAS); 
+        $this->smarty->assign('titulo', 'Olimpiadas');
+        $this ->smarty->assign('alumnos', $alumnos);
+        $this ->smarty->assign('facultades', $facultades);
+        $this ->smarty-> display('templates/listadoAlumnos.tpl');
+    }
+
+    public function displayAdministrador($alumnos, $facultades){
+        $this ->smarty->assign('facultades', $facultades);
+        $this ->smarty->assign('alumnos', $alumnos);
+        $this ->smarty->display('templates/facuForm.tpl');
+        $this ->smarty-> display('templates/formularioEditar.tpl');
     }
 }

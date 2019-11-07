@@ -1,6 +1,6 @@
 {include file = "header.tpl"}
 {include file = "facuForm.tpl"}
-{include file = "alumnoForm.tpl"}
+
 <section>
   <div class="leyenda">
             <article class="history">

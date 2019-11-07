@@ -1,3 +1,4 @@
+{include file = "header.tpl"}
 {* Usuario *}
 {* Formulario de alumno *}
 <form class="formS" method="POST" action="insertarAlumno">
@@ -14,3 +15,7 @@
     {/foreach}
 </select>
 </form>
+{foreach from=$alumnos item=alumno}
+<li>{$alumno->nombre}:{$alumno->apellido}:{$alumno->DNI}:{$alumno->email}:{$alumno->celular}-<a href='alumno/{$alumno->id_alumno}'>Editar</a> - <a href='eliminarAlumno/{$facultad->id_facultad}'>Eliminar</a></li>
+{/foreach}
+{include file = "footer.tpl"}

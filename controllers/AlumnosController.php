@@ -12,22 +12,26 @@ class AlumnosController{
     //Constructor
     public function __construct(){
         $this->model = new AlumnosModel();
-        $this->model = new FacultadesModel();
+        $this->modelFacultad = new FacultadesModel();
         //paso la function al constructor por que siempre se van a mostrar las facultades
         $this->view = new AlumnosView();
     }
 
     //Funcion que me muestra el home
     public function showIndex(){
-        $alumnos = $this->model->getAlumnos();//obtengo los generos desde el model
-        $facultades = $this ->modelFacultad -> getFacultades();
-        $this ->view -> displayVisitante($genders, $series);
+        $alumnos = $this->model->getAlumnos();//obtengo los alumnos desde el model
+        $facultades = $this ->modelFacultad -> getFacultades();//ver si es getFacultades
+        $this ->view -> displayListaAlumnos($alumnos, $facultades);
         
     }
 
     //Funcion que muestra todos los alumnos
     public function getAlumnos(){
     $alumnos=$this->model->getAlumnos();
-    $this->view->displayAlumnos($alumnos);
+    $facultades = $this ->modelFacultad -> getFacultades();
+    $this->view->displayAlumnos($alumnos, $facultades);
     }
+
+    
+
 }
