@@ -26,12 +26,17 @@ $facultadesController = new FacultadesController();
          $facultadesController->addFacultad();
          die();
         }
+        //debe llamar a una funcion que muestre un formulario para editar
         elseif($url[0]=="editar"){
-         $facultadesController->editFacultad();
+         $facultadesController->editFacultad($url[1]);
          die();
-        }
+        } 
+        elseif($url[0]=="formulario"){
+            $facultadesController->displayForm($url[1]);
+            die();
+           }        
         elseif($url[0]=="eliminar"){
-         $facultadesController->deleteFacultad();
+         $facultadesController->deleteFacultad($url[1]);
          die();
         }
         }

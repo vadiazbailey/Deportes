@@ -47,7 +47,9 @@ class FacultadesModel{
         }
     }
     //Elimina una facultad
-    public function deleteFacultad(){
-        
+    public function deleteFacultad($id_facultad){
+     $query=$this->db->prepare('DELETE FROM facultad WHERE id_facultad=?');
+     $query->execute(array($id_facultad));
     }
+
 }

@@ -31,4 +31,8 @@ class FacultadesView{
     public function displayFacultad($facultadNombre){
         $this->smarty->display('../templates/verFacultades.tpl');
     }
+    //Muestra un formulario para editar 
+    public function displayForm($id_facultad){
+        $this->smarty->display('../templates/formularioEditar.tpl');
+    }
 }
