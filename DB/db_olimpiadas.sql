@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2019 a las 21:03:47
--- Versión del servidor: 10.1.26-MariaDB
--- Versión de PHP: 7.1.8
+-- Tiempo de generación: 08-11-2019 a las 01:50:23
+-- Versión del servidor: 10.4.6-MariaDB
+-- Versión de PHP: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -73,8 +73,27 @@ INSERT INTO `facultad` (`id_facultad`, `nombre_facultad`, `sede`, `historia`) VA
 (8, 'Quequén', 'Quequén', 'El origen de su mascota es reciente, la misma es un duende. La historia del porqué se eligió esta mascota viene dada porque en los alrededores del predio, donde se encuentra la sede, está rodeado de gnomos.\r\n\r\nTomando de esta misma manera sus colores, un azul marino, medio verdoso, por el mar.'),
 (9, 'Salud', 'Olavarría', 'Se identifican con los colores verde y azul.\r\n\r\nNo tienen mascota por el momento.'),
 (10, 'Sociales', 'Olavarría', 'Sus colores son el naranja y el negro.\r\n\r\nPor el momento no tienen definida una mascota.'),
-(11, 'Veterinarias', 'Tandil', 'Son conocidos como los borrachos del tablón, no tienen una mascota bien definida, pero el resto de las facultades lo representan con un paisano. Por los equipos de futsal femenino y básquet se vienen representando con el chancho.\r\n\r\nSus colores vienen definidos porque mundialmente la cruz violeta es representativa de la veterinaria, junto con el blanco y negro.'),
-(20, 'ailu', 'pedro', 'ailu');
+(11, 'Veterinarias', 'Tandil', 'Son conocidos como los borrachos del tablón, no tienen una mascota bien definida, pero el resto de las facultades lo representan con un paisano. Por los equipos de futsal femenino y básquet se vienen representando con el chancho.\r\n\r\nSus colores vienen definidos porque mundialmente la cruz violeta es representativa de la veterinaria, junto con el blanco y negro.');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id_usuario` int(11) NOT NULL,
+  `nombre` varchar(40) NOT NULL,
+  `email` text NOT NULL,
+  `password` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `nombre`, `email`, `password`) VALUES
+(2, 'Pocha', 'pocha@pocha', '$2y$10$cJ2HTfdYMO9g2JTmiHMcbONERDLhm1/KosxtoNov.c0OcYIIZilTC');
 
 --
 -- Índices para tablas volcadas
@@ -94,6 +113,12 @@ ALTER TABLE `facultad`
   ADD PRIMARY KEY (`id_facultad`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -102,11 +127,19 @@ ALTER TABLE `facultad`
 --
 ALTER TABLE `alumno`
   MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT de la tabla `facultad`
 --
 ALTER TABLE `facultad`
   MODIFY `id_facultad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- Restricciones para tablas volcadas
 --

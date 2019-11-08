@@ -23,9 +23,10 @@ class FacultadesModel{
     
     //Obtiene una facultad
     public function getFacultad($id_facultad){
-        $query = $this->db->prepare('SELECT * FROM facultad WHERE nombre_facultad=?');
+        $query = $this->db->prepare('SELECT * FROM facultad WHERE id_facultad = ?');
         $query-> execute(array($id_facultad));
         $facultad = $query->fetch(PDO::FETCH_OBJ);
+        return $facultad;
     }
     // public function getFacultad($fNombre){
     //     $query=$this->db->prepare('SELECT * FROM facultad WHERE nombre_facultad=?');

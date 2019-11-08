@@ -1,8 +1,36 @@
-{include file = "header.tpl"}
+<?php
+/* Smarty version 3.1.33, created on 2019-11-08 01:40:30
+  from 'C:\xampp\htdocs\WEB2\Deportes\templates\verIndex.tpl' */
 
-{if isset($smarty.session.userId)}    
-    {include file = "facuForm.tpl"}   
-{/if}
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5dc4b97eaa0453_46117473',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '969680c2bfa6bdd2c801e8e31125feca01a39444' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\WEB2\\Deportes\\templates\\verIndex.tpl',
+      1 => 1573173629,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:header.tpl' => 1,
+    'file:facuForm.tpl' => 1,
+    'file:footer.tpl' => 1,
+  ),
+),false)) {
+function content_5dc4b97eaa0453_46117473 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+<?php if (isset($_SESSION['userId'])) {?>    
+    <?php $_smarty_tpl->_subTemplateRender("file:facuForm.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>   
+<?php }?>
 
 <section>
   <div class="leyenda">
@@ -29,4 +57,6 @@
             </article>
     </div>
 </section>
-{include file = "footer.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
+}

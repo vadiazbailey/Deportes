@@ -33,7 +33,15 @@ class FacultadesView{
         $this->smarty->display('../templates/verFacultades.tpl');
     }
     //Muestra un formulario para editar 
-    public function displayForm($id_facultad){
+    public function displayForm($facultad){
+        $this->smarty->assign('BASE_URL', BASE_URL);
+        $this->smarty->assign('facultad', $facultad);
         $this->smarty->display('../templates/formularioEditar.tpl');
+    }
+
+    public function displayVerMas($facultad) {
+        $this->smarty->assign('BASE_URL', BASE_URL);
+        $this->smarty->assign('facultad', $facultad);
+        $this->smarty->display('../templates/verMas.tpl');
     }
 }

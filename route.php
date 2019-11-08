@@ -1,7 +1,7 @@
 <?php
 require_once ('controllers/FacultadesController.php');
 require_once ('controllers/AlumnosController.php');
-require_once ('controllers/LoginController.php');
+require_once ('controllers/UserController.php');
 
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 define("LOGIN", BASE_URL . 'login');
@@ -12,6 +12,7 @@ define("URL_OLIMPIADAS", BASE_URL);
 $action = $_GET['action'];//tomo el valor del action (accion que haga el usuario)
 $facultadesController = new FacultadesController();
 $alumnosController=new AlumnosController();
+$userController = new UserController();
 
 // $adminController = new AdminController();
 //$controllerLogin = new LoginController();
@@ -24,14 +25,30 @@ $alumnosController=new AlumnosController();
         //si el action está seteado
         $url = explode("/", $action);//divido con el explode un string en un array de strings
             if($url[0] == 'login'){
-                
+                $userController->displayLogIn();
         }
-        elseif($url[0]=="insertar"){
-         $facultadesController->addFacultad();
+        elseif($url[0]=="registrarse"){
+            $userController->displayRegistro();
+            die();
+        }
+        elseif($url[0]=="registrar"){
+            $userController->registerUser();
+            die();
+        }
+        elseif($url[0]=="registrar"){
+            $userController->registerUser();
+            die();
+        }
+        elseif($url[0]=="identificar"){
+         $userController->logIn();
          die();
         }
+        elseif($url[0]=="logout"){
+            $userController->logOut();
+            die();
+        }
         elseif($url[0]=="editar"){
-         $facultadesController->editFacultad($url[1]);
+         $facultadesController->editFacultad();
          die();
         } 
         //Llama a una funcion que muestre un formulario para editar
@@ -49,6 +66,9 @@ $alumnosController=new AlumnosController();
         //----------------------ALUMNOS---------------------------------
         elseif($url[0]=="alumnos"){
             $alumnosController->getAlumnos();
+        }
+        elseif($url[0]=="verMas"){
+            $facultadesController->verMas($url[1]);
         }
         // elseif($url[0]=="insertarAlumnos"){
         //     $alumnosController->addAlumno();

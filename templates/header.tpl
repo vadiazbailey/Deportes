@@ -11,7 +11,7 @@
     </head>
     <body>
         <header>
-        <h1 class="titulo">Olimpiadas</h1>
+        <a href="{BASE_URL}" ><h1 class="titulo">Olimpiadas</h1></a>
         <div class= "log">
             <a class ="entrar" href="{$URL}login"><p>LOGIN</p></a>
             <a class ="salir"href="{$URL}logout"><p>LOGOUT</p></a>
@@ -22,7 +22,7 @@
         <nav class = nonav>
             <ul>
                 {foreach from= $facultades item=facultad}
-                    <li><a href="{$URL}{$facultad->nombre_facultad}">{$facultad->nombre_facultad}</a></li>
+                    <li><a href="{$URL}verMas/{$facultad->id_facultad}">{$facultad->nombre_facultad}</a></li>
                 {/foreach}
             </ul>
         </nav>
