@@ -1,3 +1,4 @@
+{* Formulario para editar facultades *}
 {include file = "header.tpl"}
 <form class="formulario" method="POST" action="{BASE_URL}editar">
      <label>Editar la facultad seleccionada</label>

@@ -16,5 +16,16 @@ class AlumnosModel{
         $alumnos = $query->fetchAll(PDO::FETCH_OBJ);
         return $alumnos;
     }
+    //Agrega un alumno
+    public function addAlumno($nombre,$apellido,$DNI,$email,$celular, $facultad){
+        $query=$this->db->prepare('INSERT INTO alumno (nombre,apellido,DNI,email,celular,facultad) VALUES (?,?,?,?,?,?)');
+        $query->execute(array($nombre,$apellido,$DNI,$email,$celular, $facultad));  
+
+    }
+    //Elimina un alumno
+    public function deleteAlumno($id_alumno){
+        $query=$this->db->prepare('DELETE FROM alumno WHERE id_alumno=?');
+        $query->execute(array($id_alumno));
+    }
     
 }

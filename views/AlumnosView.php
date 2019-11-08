@@ -16,7 +16,8 @@ class AlumnosView{
 
     //Vista de los alumnos
     public function displayAlumnos($alumnos, $facultades){
-        $this->smarty->assign('URL', URL_OLIMPIADAS); 
+        $this->smarty->assign('URL', URL_OLIMPIADAS);
+        $this->smarty->assign('ALUMNOS', ALUMNOS);
         $this->smarty->assign('titulo', 'Olimpiadas');
         $this ->smarty->assign('alumnos', $alumnos);
         $this ->smarty->assign('facultades', $facultades);

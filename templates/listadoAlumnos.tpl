@@ -1,7 +1,9 @@
-{include file = "header.tpl"}
+{include file="header.tpl" }
 {* Usuario *}
-{* Formulario de alumno *}
-<form class="formS" method="POST" action="insertarAlumno">
+{* Formulario para insertar, editar y eliminar alumnos *}
+{* se conecta con otro formulario "formEditarAlumno.tpl" *}
+
+<form class="formS" method="POST" action="inscribirse">
 <label>Datos del alumno</label>
 <input class="nombre" name="nombre" type="text" placeholder="Nombre" value=""/>
 <input class="apellido" name="apellido" type="text" placeholder="Apellido" value=""/>
@@ -14,8 +16,10 @@
         <option value="{$facultad->nombre_facultad}">{$facultad->nombre_facultad}</option>   
     {/foreach}
 </select>
+    <button type="submit" class="enviarDatos">Inscribirse</button>
 </form>
+{* crea una lista de los alumnos *}
 {foreach from=$alumnos item=alumno}
-<li>{$alumno->nombre}:{$alumno->apellido}:{$alumno->DNI}:{$alumno->email}:{$alumno->celular}-<a href='alumno/{$alumno->id_alumno}'>Editar</a> - <a href='eliminarAlumno/{$facultad->id_facultad}'>Eliminar</a></li>
+<li>{$alumno->nombre}:{$alumno->apellido}:{$alumno->DNI}:{$alumno->email}:{$alumno->celular}-<a href='alumno/{$alumno->id_alumno}'>Editar</a> - <a href='eliminarAlumno/{$alumno->id_alumno}'>Eliminar</a></li>
 {/foreach}
-{include file = "footer.tpl"}
+{include file ="footer.tpl"}
