@@ -9,6 +9,7 @@
         private $modelUser;
 
         private $modelFacultades;
+        private $modelAlumnos;
 
         public function __construct(){
             $this->modelUser = new UserModel();

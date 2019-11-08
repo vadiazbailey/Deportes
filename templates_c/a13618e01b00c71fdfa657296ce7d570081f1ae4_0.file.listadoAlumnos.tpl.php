@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-07 20:52:11
+/* Smarty version 3.1.33, created on 2019-11-08 05:19:37
   from 'C:\xampp\htdocs\Deportes\templates\listadoAlumnos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dc475ebe15ec7_57517093',
+  'unifunc' => 'content_5dc4ecd96199c5_53060260',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a13618e01b00c71fdfa657296ce7d570081f1ae4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Deportes\\templates\\listadoAlumnos.tpl',
-      1 => 1573153186,
+      1 => 1573186760,
       2 => 'file',
     ),
   ),
@@ -22,10 +22,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dc475ebe15ec7_57517093 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dc4ecd96199c5_53060260 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-<form class="formS" method="POST" action="insertarAlumno">
+
+<form class="formS" method="POST" action="inscribirse">
 <label>Datos del alumno</label>
 <input class="nombre" name="nombre" type="text" placeholder="Nombre" value=""/>
 <input class="apellido" name="apellido" type="text" placeholder="Apellido" value=""/>
@@ -47,6 +48,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['facultad']->value) {
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </select>
+    <button type="submit" class="enviarDatos">Inscribirse</button>
 </form>
 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['alumnos']->value, 'alumno');
@@ -59,7 +61,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['alumno']->value) {
 :<?php echo $_smarty_tpl->tpl_vars['alumno']->value->email;?>
 :<?php echo $_smarty_tpl->tpl_vars['alumno']->value->celular;?>
 -<a href='alumno/<?php echo $_smarty_tpl->tpl_vars['alumno']->value->id_alumno;?>
-'>Editar</a> - <a href='eliminarAlumno/<?php echo $_smarty_tpl->tpl_vars['facultad']->value->id_facultad;?>
+'>Editar</a> - <a href='eliminarAlumno/<?php echo $_smarty_tpl->tpl_vars['alumno']->value->id_alumno;?>
 '>Eliminar</a></li>
 <?php
 }

@@ -3,7 +3,7 @@
 {* se conecta con otro formulario "formularioEditar.tpl" *}
 
 <form class="formS" method="POST" action="insertar">
-     <label>Insertar nueva facultad</label>
+    <label>Insertar nueva facultad</label>
     <input class= "facultad" name="facultad" type="text" placeholder="facultad"value=""/>
     <input class="sede" name="sede" type="text" placeholder="sede"value=""/>
     <input class="historia" name="historia" type="text" placeholder="historia"value=""/>

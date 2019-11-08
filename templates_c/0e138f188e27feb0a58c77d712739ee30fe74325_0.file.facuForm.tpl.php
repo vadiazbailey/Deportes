@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-07 02:47:44
+/* Smarty version 3.1.33, created on 2019-11-08 05:19:34
   from 'C:\xampp\htdocs\Deportes\templates\facuForm.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dc377c05bc772_77846962',
+  'unifunc' => 'content_5dc4ecd696c8c2_58832874',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0e138f188e27feb0a58c77d712739ee30fe74325' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Deportes\\templates\\facuForm.tpl',
-      1 => 1573091254,
+      1 => 1573186760,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dc377c05bc772_77846962 (Smarty_Internal_Template $_smarty_tpl) {
-?><form class="formS" method="POST" action="insertar">
+function content_5dc4ecd696c8c2_58832874 (Smarty_Internal_Template $_smarty_tpl) {
+?>
+<form class="formS" method="POST" action="insertar">
      <label>Insertar nueva facultad</label>
     <input class= "facultad" name="facultad" type="text" placeholder="facultad"value=""/>
     <input class="sede" name="sede" type="text" placeholder="sede"value=""/>

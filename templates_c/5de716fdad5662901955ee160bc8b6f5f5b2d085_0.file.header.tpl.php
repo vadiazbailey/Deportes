@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-07 20:57:24
+/* Smarty version 3.1.33, created on 2019-11-08 05:19:34
   from 'C:\xampp\htdocs\Deportes\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dc477241134e0_11236683',
+  'unifunc' => 'content_5dc4ecd694d4c1_04699264',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5de716fdad5662901955ee160bc8b6f5f5b2d085' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Deportes\\templates\\header.tpl',
-      1 => 1573156558,
+      1 => 1573186760,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dc477241134e0_11236683 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dc4ecd694d4c1_04699264 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
     <html lang "es">
     <head>
@@ -35,15 +35,19 @@ css/style.css">
     </head>
     <body>
         <header>
-        <h1 class="titulo">Olimpiadas</h1>
+        <a href="<?php echo BASE_URL;?>
+" ><h1 class="titulo">Olimpiadas</h1></a>
         <div class= "log">
             <a class ="entrar" href="<?php echo $_smarty_tpl->tpl_vars['URL']->value;?>
 login"><p>LOGIN</p></a>
             <a class ="salir"href="<?php echo $_smarty_tpl->tpl_vars['URL']->value;?>
 logout"><p>LOGOUT</p></a>
+            <a class ="alumnos"href="<?php echo $_smarty_tpl->tpl_vars['URL']->value;?>
+alumnos"><p>ALUMNO</p></a>
         </div>
                 </header>
-         <h2 id = "menu">Menú</h2>
+
+        <h2 id = "menu">Menú</h2>
         <nav class = nonav>
             <ul>
                 <?php
@@ -51,8 +55,8 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['facultad']->value) {
 ?>
-                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['URL']->value;
-echo $_smarty_tpl->tpl_vars['facultad']->value->nombre_facultad;?>
+                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['URL']->value;?>
+verMas/<?php echo $_smarty_tpl->tpl_vars['facultad']->value->id_facultad;?>
 "><?php echo $_smarty_tpl->tpl_vars['facultad']->value->nombre_facultad;?>
 </a></li>
                 <?php

@@ -18,7 +18,7 @@ class AlumnosModel{
     }
     //Agrega un alumno
     public function addAlumno($nombre,$apellido,$DNI,$email,$celular, $facultad){
-        $query=$this->db->prepare('INSERT INTO alumno (nombre,apellido,DNI,email,celular,facultad) VALUES (?,?,?,?,?,?)');
+        $query=$this->db->prepare('INSERT INTO alumno (nombre,apellido,DNI,email,celular,id_facultad_fk) VALUES (?,?,?,?,?,?)');
         $query->execute(array($nombre,$apellido,$DNI,$email,$celular, $facultad));  
 
     }
