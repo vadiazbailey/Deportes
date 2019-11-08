@@ -50,23 +50,26 @@ class AlumnosController{
     }
     //Función que elimina un alumno
     public function deleteAlumno($id_alumno){
-        $this->userController->checklogin();
         $this->model->deleteAlumno($id_alumno);
 
         header ("Location: " . ALUMNOS);
     }
    
-    public function editFacultad(){
-        if(isset($_POST['nombre'])&&($_POST['apellido'])&&($_POST['DNI'])&&($_POST['email'])&&($_POST['celular'])){
+    public function editAlumno(){
+        if(isset($_POST['nombre'])&&($_POST['apellido'])&&($_POST['DNI'])&&($_POST['email'])&&($_POST['celular'])&&($_POST['facultad'])){
 
-            $id_facultad = ($_POST['id']);
+            $id_alumno = ($_POST['id']);
+            $nombre=($_POST['nombre']);
+            $apellido=($_POST['apellido']);
+            $DNI=($_POST['DNI']);
+            $email=($_POST['email']);
+            $celular=($_POST['celular']);
             $facultad=($_POST['facultad']);
-            $sede=($_POST['sede']);
-            $historia=($_POST['historia']);
+
         }
 
-         $this->model->editFacultad($id_facultad, $facultad, $sede, $historia);
-         header ("Location: " . URL_OLIMPIADAS);
+         $this->model->editAlumno ($id_alumno, $nombre, $apellido, $DNI, $email, $celular, $facultad);
+         header ("Location: " . ALUMNOS);
     }
 
 }

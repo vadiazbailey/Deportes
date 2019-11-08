@@ -67,10 +67,10 @@ $userController = new UserController();
         elseif($url[0]=="alumnos"){
             $alumnosController->getAlumnos();
         }
-        elseif($url[0]=="alumno"){
-            $alumnosController->displayForm($url[1]);
-            die();
-        }
+        // elseif($url[0]=="alumno"){
+        //     $alumnosController->editAlumno();
+        //     die();
+        // }
         elseif($url[0]=="eliminarAlumno"){
             $alumnosController->deleteAlumno($url[1]);
             die();
@@ -78,7 +78,11 @@ $userController = new UserController();
         elseif($url[0]=="inscribirse"){
             $alumnosController->addAlumno();
             die();
-        }       
+        }  
+        elseif($url[0]=="editAlumno"){
+            $alumnosController->editAlumno();
+            die();
+           }     
         elseif($url[0]=="verMas"){
             $facultadesController->verMas($url[1]);
         }

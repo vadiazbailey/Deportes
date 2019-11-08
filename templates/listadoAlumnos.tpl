@@ -4,7 +4,9 @@
 {* se conecta con otro formulario "formEditarAlumno.tpl" *}
 
 <form class="formS" method="POST" action="inscribirse">
+
 <label>Datos del alumno</label>
+
 <input class="nombre" name="nombre" type="text" placeholder="Nombre" value=""/>
 <input class="apellido" name="apellido" type="text" placeholder="Apellido" value=""/>
 <input class="DNI" name="DNI" type="number" placeholder="DNI" value=""/>
@@ -20,6 +22,6 @@
 </form>
 {* crea una lista de los alumnos *}
 {foreach from=$alumnos item=alumno}
-<li>{$alumno->nombre}:{$alumno->apellido}:{$alumno->DNI}:{$alumno->email}:{$alumno->celular}-<a href='alumno/{$alumno->id_alumno}'>Editar</a> - <a href='eliminarAlumno/{$alumno->id_alumno}'>Eliminar</a></li>
+<li>{$alumno->nombre}:{$alumno->apellido}:{$alumno->DNI}:{$alumno->email}:{$alumno->celular}-<a href='edit/{$alumno->id_alumno}'>Editar</a> - <a href='eliminarAlumno/{$alumno->id_alumno}'>Eliminar</a></li>
 {/foreach}
 {include file ="footer.tpl"}
