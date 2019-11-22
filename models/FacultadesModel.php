@@ -46,8 +46,9 @@ class FacultadesModel{
     
     //Mueve el archivo
     private function moveFile($imagen){
-        $filepath= "img/". uniqid(). ".".strtolower(pathinfo($imagen["name"], PATHINFO_EXTENSION));
+        $filepath= "images/facultad". uniqid(). ".".strtolower(pathinfo($imagen["name"], PATHINFO_EXTENSION));
         move_uploaded_file($imagen['tmp_name'], $filepath);
+        
         return $filepath;
     }
 

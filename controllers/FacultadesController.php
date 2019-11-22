@@ -49,7 +49,6 @@ class FacultadesController{
             $sede=($_POST['sede']);
             $historia=($_POST['historia']);
         }
-
         //Obtiene la imagen
         if ($_FILES['imagen']['name']) {
             if ($_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/png") {     
