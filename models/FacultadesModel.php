@@ -28,19 +28,29 @@ class FacultadesModel{
         $facultad = $query->fetch(PDO::FETCH_OBJ);
         return $facultad;
     }
-    // public function getFacultad($fNombre){
-    //     $query=$this->db->prepare('SELECT * FROM facultad WHERE nombre_facultad=?');
-    //     $query->execute(array($fNombre));
-    //     return $query->fetch(PDO::FETCH_OBJ);
-    // }
-
-
 
     //Agrega una facultad
-    public function addFacultad($facultad,$sede,$historia){
-        $query=$this->db->prepare('INSERT INTO facultad (nombre_facultad,sede,historia) VALUES (?,?,?)');
-        $query->execute(array($facultad,$sede,$historia));
+    public function addFacultad($facultad,$sede,$historia, $imagen=null){
+        $filepath=null;
+
+        if($imagen){
+            $filepath= $this->moveFile($imagen);
+        }
+
+        $query=$this->db->prepare('INSERT INTO facultad (nombre_facultad,sede,historia,imagen) VALUES (?,?,?,?)');
+        $query->execute(array($facultad,$sede,$historia, $filepath));
+
+        //Devuelve el id de la ultima fila o secuencia insertada
+        return $this->db->lastInsertId();
     }
+    
+    //Mueve el archivo
+    private function moveFile($imagen){
+        $filepath= "img/". uniqid(). ".".strtolower(pathinfo($imagen["name"], PATHINFO_EXTENSION));
+        move_uploaded_file($imagen['tmp_name'], $filepath);
+        return $filepath;
+    }
+
     //Edita una facultad
     public function editFacultad($id_facultad,$facultad,$sede,$historia){
         $query=$this->db->prepare('UPDATE facultad SET nombre_facultad=?, sede=?,historia=? WHERE id_facultad=?');

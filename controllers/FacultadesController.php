@@ -49,7 +49,21 @@ class FacultadesController{
             $sede=($_POST['sede']);
             $historia=($_POST['historia']);
         }
-        $this->model->addFacultad($facultad,$sede,$historia);
+
+        //Obtiene la imagen
+        if ($_FILES['imagen']['name']) {
+            if ($_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/png") {     
+                $this->model->addFacultad($facultad, $sede, $historia, $_FILES['imagen']);
+            }
+            else {
+                $this->view->showError("Formato no aceptado");
+                die();
+            }
+        }
+        else{
+            $this->model->addFacultad($facultad,$sede,$historia);
+        }
+
         header ("Location: " . URL_OLIMPIADAS);
     }
     //Función que edita una facultad
